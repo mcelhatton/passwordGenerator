@@ -33,24 +33,24 @@ function generatePassword() {
 
   // validate isUppercase 
   if (isUppercase === Yes || isUppercase === yes || isUppercase === YES) {
-    isUppercase = true;
+    isUppercase = "true";
   } else if (isUppercase === NO || isUppercase === no || isUppercase === No) {
-    isUppercase = false;
+    isUppercase = "false";
   } else {
     var isUppercase = window.prompt("Use upper case in your password? Enter YES or NO.");
   }
   // validate isSpecialCharacter
   if (isSpecialCharacter === Yes || isSpecialCharacter === yes || isSpecialCharacter === YES) {
-    isSpecialCharacter = true;
+    isSpecialCharacter = "true";
   } else if (isSpecialCharacter === NO || isSpecialCharacter === no || isSpecialCharacter === No) {
-    isSpecialCharacter = false;
+    isSpecialCharacter = "false";
   } else {
     var isSpecialCharacter = window.prompt("Use special characters in your password? Enter YES or NO.");
   }
 
   // validate length
   if (passwordLength.length >= 8 && passwordLength <= 129) {
-
+    
   } else {
     window.prompt("Please enter a proper length for your password.  Minimum of 8 characters and Maximum of 128.");
   }
