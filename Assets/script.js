@@ -6,6 +6,9 @@ var passwordLength = 0;
 // series of questions, password length, special characters, upper and lower case?
 // questions / prompts
 var isUppercase = window.prompt("Use upper case in your password?");
+var isSpecialCharacter = window.prompt("Use special characters in your password?");
+var passwordLength = window.prompt("How many characters do you want in your password? Minimum length 8, Maximum length 128.");
+
 
 // password validation length, criteria 
 
