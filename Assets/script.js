@@ -24,28 +24,23 @@ generateBtn.addEventListener("click", writePassword);
 
 // generatePassword function
 function generatePassword() {
-  var isUppercase = window.prompt("Use upper case in your password? Enter YES or NO.");
-  var isSpecialCharacter = window.prompt("Use special characters in your password? Enter YES or NO.");
+  var useUppercase = window.confirm("Use upper case in your password? OK = YES.");
+  var useSpecialCharacter = window.confirm("Use special characters in your password? OK = YES.");
   var passwordLength = window.prompt("How many characters do you want in your password? Minimum length 8, Maximum length 128.");
-  console.log(isUppercase);
-  console.log(isSpecialCharacter);
+  console.log(useUppercase);
+  console.log(useSpecialCharacter);
   console.log(passwordLength);
 
   // validate isUppercase 
-  if (isUppercase === Yes || isUppercase === yes || isUppercase === YES) {
-    isUppercase = "true";
-  } else if (isUppercase === NO || isUppercase === no || isUppercase === No) {
-    isUppercase = "false";
-  } else {
-    var isUppercase = window.prompt("Use upper case in your password? Enter YES or NO.");
-  }
+  if (useUppercase) {
+    var upperCaseArray = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
+    const random = Math.floor(Math.random() * upperCaseArray.length);
+    console.log(random, upperCaseArray[random]);
+  } 
+
   // validate isSpecialCharacter
-  if (isSpecialCharacter === Yes || isSpecialCharacter === yes || isSpecialCharacter === YES) {
-    isSpecialCharacter = "true";
-  } else if (isSpecialCharacter === NO || isSpecialCharacter === no || isSpecialCharacter === No) {
-    isSpecialCharacter = "false";
-  } else {
-    var isSpecialCharacter = window.prompt("Use special characters in your password? Enter YES or NO.");
+  if (useSpecialCharacter) {
+
   }
 
   // validate length
@@ -54,6 +49,8 @@ function generatePassword() {
   } else {
     window.prompt("Please enter a proper length for your password.  Minimum of 8 characters and Maximum of 128.");
   }
+
+  // password array builder
 
 }
 
