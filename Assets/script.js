@@ -48,6 +48,7 @@ function generatePassword() {
     password += passCharacters.substring(randomNumber, randomNumber +1);
     console.log(password);
   }
+  return password;
   // validate isUppercase 
   
 
