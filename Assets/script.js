@@ -30,11 +30,22 @@ function generatePassword() {
   console.log(useUppercase);
   console.log(useSpecialCharacter);
   console.log(passwordLength);
-  var characters = "0123456789abcdefghijklmnopqrstuvwxy!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  if (useUppercase) {
+    var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  } else {
+    uppercase = "";
+  }
+  if (useSpecialCharacter) {
+    var specialCharacter = "!@#$%^&*()"
+  } else {
+    specialCharacter = "";
+  }
+  var characters = "0123456789abcdefghijklmnopqrstuvwxy";
+  var passCharacters = uppercase + specialCharacter + characters;
   var password = "";
   for (var i = 0; i <= passwordLength; i++) {
-    var randomNumber = Math.floor(Math.random() * characters.length);
-    password += characters.substring(randomNumber, randomNumber +1);
+    var randomNumber = Math.floor(Math.random() * passCharacters.length);
+    password += passCharacters.substring(randomNumber, randomNumber +1);
     console.log(password);
   }
   // validate isUppercase 
