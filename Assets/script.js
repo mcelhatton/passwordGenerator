@@ -29,10 +29,11 @@ function generatePassword() {
  // console.log(passwordLength);
 
   // make sure user selected at least one option upper case, lower case, numeric or special characters
-  while (useUppercase === false && useLowercase === false && useNumeric === false) {
+  while (useUppercase === false && useLowercase === false && useNumeric === false && useSpecialCharacter === false) {
       var useUppercase = window.confirm("Use upper case in your password? OK = YES.");
       var useLowercase = window.confirm("Use lower case in your password? OK = YES.");
       var useNumeric = window.confirm("Use numbers in your password? OK = YES.");
+      var useSpecialCharacter = window.confirm("Use special characters in your password? OK = YES.");
   }
   
   // make sure password length is between 8 and 128 characters
