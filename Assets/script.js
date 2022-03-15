@@ -61,12 +61,20 @@ function generatePassword() {
   var passCharacters = uppercase + lowercase + numeric + specialCharacter;
   var password = "";
 
+  // create password
   for (var i = 0; i < passwordLength; i++) {
     var randomNumber = Math.floor(Math.random() * passCharacters.length);
     password += passCharacters.substring(randomNumber, randomNumber +1);
     console.log(password);
   }
-  return password;
+
+  // verify password criteria matches users input
+  if (password.search(uppercase > 0) && password.search(lowercase > 0) && password.search(numeric > 0) && password.search(specialCharacter >0)) {
+    return password;
+  } else {
+    generatePassword();
+  }
+  
 
 }
 
