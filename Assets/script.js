@@ -30,13 +30,15 @@ function generatePassword() {
   console.log(useUppercase);
   console.log(useSpecialCharacter);
   console.log(passwordLength);
-
+  var characters = "0123456789abcdefghijklmnopqrstuvwxy!@#$%^&*()ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var password = "";
+  for (var i = 0; i <= passwordLength; i++) {
+    var randomNumber = Math.floor(Math.random() * characters.length);
+    password += characters.substring(randomNumber, randomNumber +1);
+    console.log(password);
+  }
   // validate isUppercase 
-  if (useUppercase) {
-    var upperCaseArray = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]
-    const random = Math.floor(Math.random() * upperCaseArray.length);
-    console.log(random, upperCaseArray[random]);
-  } 
+  
 
   // validate isSpecialCharacter
   if (useSpecialCharacter) {
@@ -44,7 +46,7 @@ function generatePassword() {
   }
 
   // validate length
-  if (passwordLength.length >= 8 && passwordLength <= 129) {
+  if (passwordLength.length >= 8 && passwordLength <= 128) {
     
   } else {
     window.prompt("Please enter a proper length for your password.  Minimum of 8 characters and Maximum of 128.");
